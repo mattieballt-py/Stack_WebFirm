@@ -55,7 +55,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Link
               to="/contact"
-              className="px-6 py-2 bg-white text-[#0F284A] rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
+              className="px-6 py-2 bg-white text-primary-600 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
             >
               Get Started
             </Link>
@@ -108,7 +108,7 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block w-full mt-4"
               >
-                <span className="block w-full text-center px-6 py-2 bg-white text-[#0F284A] rounded-lg font-medium hover:bg-gray-100 transition-colors">Get Started</span>
+                <span className="block w-full text-center px-6 py-2 bg-white text-primary-600 rounded-lg font-medium hover:bg-gray-100 transition-colors">Get Started</span>
               </Link>
             </div>
           </motion.div>

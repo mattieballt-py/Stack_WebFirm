@@ -142,7 +142,7 @@ const Cookies = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="prose prose-lg max-w-none"
             >
-              <div className="mb-12 p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
+              <div className="mb-12 p-6 bg-primary-50 border-l-4 border-primary-600 rounded-r-lg">
                 <p className="text-gray-700 mb-0">
                   By continuing to use our website, you consent to our use of cookies as described in this policy.
                   You can manage your cookie preferences at any time through your browser settings.

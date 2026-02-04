@@ -10,6 +10,7 @@ import {
   PhoneIcon,
   MapPinIcon,
   ClockIcon,
+  ChevronDownIcon,
 } from '@heroicons/react/24/outline';
 
 const contactSchema = z.object({
@@ -24,6 +25,7 @@ const contactSchema = z.object({
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   const {
     register,
@@ -78,20 +80,36 @@ const Contact = () => {
 
   const faqs = [
     {
-      question: 'How long does it take to build a website?',
-      answer: 'Most websites are delivered in 2-3 weeks. E-commerce sites may take 3-4 weeks.',
+      question: 'Why choose Stack Websites over other London web designers?',
+      answer: 'We specialise exclusively in small London businesses. Unlike large agencies that take months and charge £10k+, we deliver professional websites in 2-3 weeks at a fixed £1,999 price. You\'ll work directly with our team (no account managers), get same-day responses, and we understand the unique challenges of running a small business in London. Plus, 98% of our clients come back for more work - our retention speaks for itself.',
     },
     {
-      question: 'What do you need from me?',
-      answer: 'Logo, brand colors, content, and images. We can help with any missing pieces.',
+      question: 'What if I don\'t have content, photos, or a logo ready?',
+      answer: 'No problem at all - most of our clients don\'t! We can write your content, source professional stock photos, or connect you with affordable local photographers. Need a logo? We can design one or recommend trusted local designers. We\'ve launched hundreds of sites and know exactly how to help you get everything sorted quickly. The key is getting started - we\'ll guide you through every step.',
     },
     {
-      question: 'Do you offer payment plans?',
-      answer: 'Yes! We offer flexible payment plans for projects over £2,000.',
+      question: 'How quickly can my London business get online?',
+      answer: 'Most London businesses are live within 2-3 weeks from our first call. We understand that every day without a website is lost revenue. Our streamlined process means you could have a discovery call this week, approve designs next week, and be live before the end of the month. We also offer rush delivery for urgent launches - just ask.',
     },
     {
-      question: 'Will I be able to update the website myself?',
-      answer: 'Absolutely! We provide training and use easy-to-update platforms.',
+      question: 'What happens after my website launches?',
+      answer: 'We don\'t disappear after launch! Every website includes 30 days of free support to handle any tweaks, questions, or issues. After that, we offer affordable monthly maintenance packages (from £150/month) covering updates, backups, security, and priority support. Many clients also return to us for SEO, additional features, or help growing their online presence. We\'re here for the long haul.',
+    },
+    {
+      question: 'Do you only work with London businesses?',
+      answer: 'Yes - London is our focus. We understand the local market, competition, and what London customers expect. We can meet you in person for coffee, visit your business, and truly understand your local customer base. This local expertise is why our clients see better results than working with overseas or non-London agencies.',
+    },
+    {
+      question: 'How do I know you\'re legitimate and won\'t disappear with my money?',
+      answer: 'Great question! We\'ve been serving London businesses since 2020 with over 100 successful projects. We work on a milestone payment system - you only pay as work is completed, never upfront. You can verify our portfolio, read our Google reviews, and we\'re happy to provide references from similar businesses. We\'re a registered UK company with a real London address and phone number. Your investment is safe with us.',
+    },
+    {
+      question: 'Can you help my business show up on Google?',
+      answer: 'Absolutely. Every website we build includes foundational SEO setup to help you rank locally. We optimize for London-specific searches, set up your Google Business Profile, and ensure your site is technically sound for search engines. For clients wanting to dominate their local market, we offer ongoing SEO services from £500/month, focusing on getting you to the top of Google for "your service + London" searches.',
+    },
+    {
+      question: 'What if I need changes after seeing the first design?',
+      answer: 'Revisions are completely normal and expected! Our packages include multiple revision rounds because we want you to love your site. We work closely with you to refine the design until it\'s exactly right. The goal is your complete satisfaction - we won\'t launch until you\'re thrilled with the result. Most clients are happy after 1-2 revision rounds, but we\'re flexible.',
     },
   ];
 
@@ -158,7 +176,7 @@ const Contact = () => {
                       type="text"
                       id="businessName"
                       placeholder="Joe's Coffee (Shoreditch)"
-                      className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 ${errors.businessName ? 'border-red-500' : ''}`}
+                      className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${errors.businessName ? 'border-red-500' : ''}`}
                       required
                     />
                     {errors.businessName && (
@@ -176,7 +194,7 @@ const Contact = () => {
                       type="text"
                       id="name"
                       placeholder="Joe Smith"
-                      className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 ${errors.name ? 'border-red-500' : ''}`}
+                      className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${errors.name ? 'border-red-500' : ''}`}
                       required
                     />
                     {errors.name && (
@@ -195,7 +213,7 @@ const Contact = () => {
                         type="email"
                         id="email"
                         placeholder="joe@joescoffee.co.uk"
-                        className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 ${errors.email ? 'border-red-500' : ''}`}
+                        className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${errors.email ? 'border-red-500' : ''}`}
                         required
                       />
                       {errors.email && (
@@ -211,7 +229,7 @@ const Contact = () => {
                         type="tel"
                         id="phone"
                         placeholder="020 7946 0123"
-                        className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                        className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       />
                     </div>
                   </div>
@@ -224,7 +242,7 @@ const Contact = () => {
                     <select
                       {...register('frustration')}
                       id="frustration"
-                      className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 ${errors.frustration ? 'border-red-500' : ''}`}
+                      className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 ${errors.frustration ? 'border-red-500' : ''}`}
                       required
                     >
                       <option value="">Select one...</option>
@@ -250,7 +268,7 @@ const Contact = () => {
                       type="text"
                       id="currentSite"
                       placeholder="www.joescoffee.co.uk or type 'none'"
-                      className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
+                      className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     />
                   </div>
 
@@ -258,7 +276,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Sending...' : 'Get My Custom Quote (2 mins)'}
                   </button>
@@ -273,7 +291,7 @@ const Contact = () => {
                     or email{' '}
                     <a
                       href="mailto:hello@websitelondon.co.uk"
-                      className="text-amber-600 hover:text-amber-700 font-medium"
+                      className="text-primary-600 hover:text-primary-700 font-medium"
                     >
                       hello@websitelondon.co.uk
                     </a>
@@ -347,27 +365,81 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="heading-lg mb-4">Common Questions</h2>
+            <h2 className="heading-lg mb-4">Everything London Businesses Ask Us</h2>
             <p className="text-body max-w-2xl mx-auto">
-              Quick answers to questions we hear most often.
+              Honest answers about pricing, process, and what makes us different. Still have questions? Just ask.
             </p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-w-4xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card"
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="bg-white rounded-xl border-2 border-gray-200 hover:border-primary-300 transition-all duration-200"
               >
-                <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-sm text-gray-600">{faq.answer}</p>
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left"
+                >
+                  <span className="text-lg font-semibold text-gray-900 pr-8">
+                    {faq.question}
+                  </span>
+                  <ChevronDownIcon
+                    className={`h-6 w-6 text-primary-600 flex-shrink-0 transition-transform duration-200 ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {openFaq === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="px-6 pb-5"
+                  >
+                    <p className="text-gray-700 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
               </motion.div>
             ))}
           </div>
+
+          {/* CTA after FAQ */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-center mt-12 p-8 bg-primary-50 rounded-xl max-w-3xl mx-auto"
+          >
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">
+              Still have questions?
+            </h3>
+            <p className="text-gray-700 mb-6">
+              We're happy to chat! Book a free 15-minute call or send us a message above.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:+442012345678"
+                className="px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+              >
+                Call: +44 20 1234 5678
+              </a>
+              <a
+                href="mailto:hello@websitelondon.co.uk"
+                className="px-6 py-3 bg-white text-primary-600 border-2 border-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+              >
+                Email Us
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </>

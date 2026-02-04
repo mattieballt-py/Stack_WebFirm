@@ -267,7 +267,7 @@ const Terms = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="prose prose-lg max-w-none"
             >
-              <div className="mb-12 p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
+              <div className="mb-12 p-6 bg-primary-50 border-l-4 border-primary-600 rounded-r-lg">
                 <p className="text-gray-700 mb-0">
                   These Terms of Service ("Terms") constitute a legally binding agreement between you
                   ("Client," "you," or "your") and Stack Websites London ("we," "our," or "us") regarding

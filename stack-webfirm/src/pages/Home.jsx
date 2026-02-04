@@ -151,7 +151,7 @@ const Home = () => {
               </div>
 
               {/* Price */}
-              <div className="mb-8 p-6 bg-amber-50 border-2 border-amber-200 rounded-xl inline-block">
+              <div className="mb-8 p-6 bg-primary-50 border-2 border-primary-200 rounded-xl inline-block">
                 <p className="text-3xl md:text-4xl font-bold text-slate-900">
                   Only £1,999 <span className="text-lg font-normal text-slate-600">- Fixed Price</span>
                 </p>

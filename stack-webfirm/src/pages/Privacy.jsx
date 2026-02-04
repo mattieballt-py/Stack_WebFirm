@@ -190,7 +190,7 @@ const Privacy = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="prose prose-lg max-w-none"
             >
-              <div className="mb-12 p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
+              <div className="mb-12 p-6 bg-primary-50 border-l-4 border-primary-600 rounded-r-lg">
                 <p className="text-gray-700 mb-0">
                   Stack Websites London ("we," "our," or "us") is committed to protecting your privacy.
                   This Privacy Policy explains how we collect, use, disclose, and safeguard your information

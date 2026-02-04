@@ -111,7 +111,7 @@ const ClientGrid = ({ clients }) => {
                   variants={cornerVariants}
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
-                  className="absolute top-3 left-3 w-4 h-4 text-slate-400 transition-all duration-300 group-hover:rotate-45 group-hover:scale-110 group-hover:text-gold-500"
+                  className="absolute top-3 left-3 w-4 h-4 text-slate-400 transition-all duration-300 group-hover:rotate-45 group-hover:scale-110 group-hover:text-primary-500"
                 >
                   <img src="/assets/clients/plus.svg" alt="" className="w-full h-full" />
                 </motion.div>
@@ -121,7 +121,7 @@ const ClientGrid = ({ clients }) => {
                   variants={cornerVariants}
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
-                  className="absolute top-3 right-3 w-4 h-4 text-slate-400 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-110 group-hover:text-gold-500"
+                  className="absolute top-3 right-3 w-4 h-4 text-slate-400 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-110 group-hover:text-primary-500"
                 >
                   <img src="/assets/clients/plus.svg" alt="" className="w-full h-full" />
                 </motion.div>
@@ -131,7 +131,7 @@ const ClientGrid = ({ clients }) => {
                   variants={cornerVariants}
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
-                  className="absolute bottom-3 left-3 w-4 h-4 text-slate-400 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-110 group-hover:text-gold-500"
+                  className="absolute bottom-3 left-3 w-4 h-4 text-slate-400 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-110 group-hover:text-primary-500"
                 >
                   <img src="/assets/clients/plus.svg" alt="" className="w-full h-full" />
                 </motion.div>
@@ -141,7 +141,7 @@ const ClientGrid = ({ clients }) => {
                   variants={cornerVariants}
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
-                  className="absolute bottom-3 right-3 w-4 h-4 text-slate-400 transition-all duration-300 group-hover:rotate-45 group-hover:scale-110 group-hover:text-gold-500"
+                  className="absolute bottom-3 right-3 w-4 h-4 text-slate-400 transition-all duration-300 group-hover:rotate-45 group-hover:scale-110 group-hover:text-primary-500"
                 >
                   <img src="/assets/clients/plus.svg" alt="" className="w-full h-full" />
                 </motion.div>
