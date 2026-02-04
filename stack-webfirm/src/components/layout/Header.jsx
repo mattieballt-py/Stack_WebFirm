@@ -23,6 +23,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
+                <div className="relative z-10 flex items-center justify-center h-16 md:h-20">
+                        <img
+                          src={`/src/assets/${StackLogo.svg}`}
+                          alt="Stack Websites Logo"
+                          className="w-full h-full object-contain transition-all duration-300"
+                        />
+                </div>
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">S</span>
             </div>

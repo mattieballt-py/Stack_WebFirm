@@ -150,8 +150,7 @@ const ClientGrid = ({ clients }) => {
                   <img
                     src={`/assets/clients/${client.svg}`}
                     alt={client.name}
-                    className="w-full h-full object-contain text-slate-700 transition-all duration-300 group-hover:text-navy-900 group-hover:scale-105"
-                    style={{ filter: 'brightness(0) saturate(100%)' }}
+                    className="w-full h-full object-contain transition-all duration-300 group-hover:scale-105 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100"
                   />
                 </div>
               </div>

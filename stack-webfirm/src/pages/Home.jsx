@@ -99,14 +99,14 @@ const Home = () => {
   ];
 
   const clients = [
-    { name: 'Slack', svg: 'slack.svg' },
-    { name: 'Salesforce', svg: 'salesforce.svg' },
-    { name: 'Webflow', svg: 'webflow.svg' },
-    { name: 'PwC', svg: 'pwc.svg' },
-    { name: 'Shopify', svg: 'shopify.svg' },
-    { name: 'Airbnb', svg: 'airbnb.svg' },
-    { name: 'Stripe', svg: 'stripe.svg' },
-    { name: 'Notion', svg: 'notion.svg' },
+    { name: 'AI Society', svg: 'ai-society.svg' },
+    { name: 'Imperial College London', svg: 'imperial.svg' },
+    { name: 'KTH Royal Institute', svg: 'kth.svg' },
+    { name: 'Institution of Mechanical Engineers', svg: 'insitution-mechanical-engineering.svg' },
+    { name: 'Royal Academy of Engineering', svg: 'royal-academy-of-engineering.svg' },
+    { name: 'Red Bull Racing F1', svg: 'red-bull-racing-f1-seeklogo 1.svg' },
+    { name: 'Pathfinder Medical', svg: 'pathfinder-medical.svg' },
+    { name: 'Fibsail', svg: 'fibsail_white.svg' },
   ];
 
   return (
