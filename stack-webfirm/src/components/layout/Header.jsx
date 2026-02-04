@@ -18,24 +18,19 @@ const Header = () => {
   const isActive = (href) => location.pathname === href;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: '#0F284A' }}>
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-                <div className="relative z-10 flex items-center justify-center h-16 md:h-20">
-                        <img
-                          src={`/src/assets/${StackLogo.svg}`}
-                          alt="Stack Websites Logo"
-                          className="w-full h-full object-contain transition-all duration-300"
-                        />
-                </div>
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img
+              src="/assets/StackLogo.svg"
+              alt="Stack Websites Logo"
+              className="h-10 w-auto object-contain"
+            />
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-gray-900 leading-tight">Stack Websites</span>
-              <span className="text-xs text-primary-600 leading-tight">London</span>
+              <span className="text-lg font-bold text-white leading-tight">Stack Websites</span>
+              <span className="text-xs text-gray-300 leading-tight italic">London</span>
             </div>
           </Link>
 
@@ -47,8 +42,8 @@ const Header = () => {
                 to={item.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(item.href)
-                    ? 'text-primary-600 bg-primary-50'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'text-white bg-white/10'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {item.name}
@@ -60,7 +55,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Link
               to="/contact"
-              className="btn-primary text-sm"
+              className="px-6 py-2 bg-white text-[#0F284A] rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
             >
               Get Started
             </Link>
@@ -69,7 +64,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span className="sr-only">Open menu</span>
@@ -90,7 +85,8 @@ const Header = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-gray-200 bg-white"
+            className="md:hidden border-t border-white/10"
+            style={{ backgroundColor: '#0F284A' }}
           >
             <div className="container-custom py-4 space-y-1">
               {navigation.map((item) => (
@@ -100,8 +96,8 @@ const Header = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                     isActive(item.href)
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                      ? 'text-white bg-white/10'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {item.name}
@@ -112,7 +108,7 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block w-full mt-4"
               >
-                <span className="btn-primary w-full text-center block">Get Started</span>
+                <span className="block w-full text-center px-6 py-2 bg-white text-[#0F284A] rounded-lg font-medium hover:bg-gray-100 transition-colors">Get Started</span>
               </Link>
             </div>
           </motion.div>

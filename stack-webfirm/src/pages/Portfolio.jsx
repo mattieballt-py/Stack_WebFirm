@@ -8,17 +8,17 @@ const Portfolio = () => {
 
   const categories = [
     { id: 'all', name: 'All Projects' },
-    { id: 'restaurant', name: 'Restaurants & Cafés' },
-    { id: 'retail', name: 'Retail & E-commerce' },
-    { id: 'trades', name: 'Trades & Services' },
-    { id: 'professional', name: 'Professional Services' },
+    { id: 'dog training', name: 'Dog Training' },
+    { id: 'sports', name: 'Sports' },
+    { id: 'personal brands', name: 'Personal Brands' },
+    { id: 'engineering', name: 'Engineering & Technical' },
   ];
 
   const projects = [
     {
       id: 1,
       title: 'Café Mocha',
-      category: 'restaurant',
+      category: 'dog training',
       location: 'Shoreditch',
       image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format',
       description: 'Modern coffee shop website with online ordering system and menu showcase.',
@@ -32,7 +32,7 @@ const Portfolio = () => {
     {
       id: 2,
       title: 'Smith Plumbing Services',
-      category: 'trades',
+      category: 'sports',
       location: 'Camden',
       image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format',
       description: 'Professional service website with booking system and emergency contact.',
@@ -151,7 +151,7 @@ const Portfolio = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="heading-xl mb-6">
-              Our <span className="text-gradient">London Projects</span>
+              Our London <span className="border-2 border-navy-900 rounded-lg px-3 py-1 inline-block">Projects</span>
             </h1>
             <p className="text-body mb-8">
               Real websites for real London businesses. See how we've helped cafés, shops, trades, and services succeed online.
@@ -170,7 +170,7 @@ const Portfolio = () => {
                 onClick={() => setFilter(category.id)}
                 className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 ${
                   filter === category.id
-                    ? 'bg-primary-600 text-white shadow-md'
+                    ? 'bg-primary-600 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >

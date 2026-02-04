@@ -147,7 +147,7 @@ const Contact = () => {
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit(onSubmit)} className="max-w-md space-y-4 p-6 bg-white rounded-xl shadow-lg">
+                <form onSubmit={handleSubmit(onSubmit)} className="max-w-md space-y-4 p-6 bg-white rounded-xl">
                   {/* Business Name */}
                   <div>
                     <label htmlFor="businessName" className="block text-sm font-medium text-slate-700 mb-1">
@@ -258,7 +258,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Sending...' : 'Get My Custom Quote (2 mins)'}
                   </button>

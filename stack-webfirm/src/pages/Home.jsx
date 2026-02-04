@@ -106,7 +106,7 @@ const Home = () => {
     { name: 'Royal Academy of Engineering', svg: 'royal-academy-of-engineering.svg' },
     { name: 'Red Bull Racing F1', svg: 'red-bull-racing-f1-seeklogo 1.svg' },
     { name: 'Pathfinder Medical', svg: 'pathfinder-medical.svg' },
-    { name: 'Fibsail', svg: 'fibsail_white.svg' },
+    { name: 'FibonacciHQ', svg: 'fibsail_white.svg' },
   ];
 
   return (
@@ -166,7 +166,7 @@ const Home = () => {
 
               {/* Trust Signal */}
               <p className="text-sm text-slate-600">
-                ✅ 50+ London businesses | Fixed price, no surprises | Reply within 2hrs
+                50+ London businesses | Fixed price, no surprises | Reply within 2hrs
               </p>
             </motion.div>
 
@@ -180,7 +180,7 @@ const Home = () => {
                 <img
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format"
                   alt="Modern web design"
-                  className="rounded-2xl shadow-2xl"
+                  className="rounded-2xl"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-primary rounded-2xl -z-10"></div>

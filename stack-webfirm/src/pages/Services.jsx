@@ -48,57 +48,7 @@ const Services = () => {
       timeline: '3-4 weeks',
       ideal: 'Boutiques, retailers, product businesses',
     },
-    {
-      id: 'seo',
-      icon: MagnifyingGlassIcon,
-      title: 'SEO Optimization',
-      description: 'Get found on Google with professional search engine optimization.',
-      features: [
-        'Keyword research & strategy',
-        'On-page SEO optimization',
-        'Technical SEO setup',
-        'Google Business Profile',
-        'Local London SEO',
-        'Monthly performance reports',
-      ],
-      pricing: 'From £500/month',
-      timeline: 'Ongoing',
-      ideal: 'All London businesses',
-    },
-    {
-      id: 'maintenance',
-      icon: WrenchScrewdriverIcon,
-      title: 'Website Maintenance',
-      description: 'Keep your website secure, fast, and up-to-date.',
-      features: [
-        'Regular updates & backups',
-        'Security monitoring',
-        'Performance optimization',
-        'Content updates',
-        'Priority support',
-        'Monthly health checks',
-      ],
-      pricing: 'From £150/month',
-      timeline: 'Ongoing',
-      ideal: 'Existing website owners',
-    },
-    {
-      id: 'branding',
-      icon: GlobeAltIcon,
-      title: 'Branding & Logo Design',
-      description: 'Professional brand identity that makes you memorable.',
-      features: [
-        'Custom logo design',
-        'Brand color palette',
-        'Typography selection',
-        'Brand guidelines',
-        'Business card design',
-        'Social media assets',
-      ],
-      pricing: 'From £800',
-      timeline: '1-2 weeks',
-      ideal: 'New businesses, rebrands',
-    },
+    
     {
       id: 'development',
       icon: CodeBracketIcon,
@@ -217,7 +167,7 @@ const Services = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="heading-xl mb-6">
-              Web Design Services for <span className="text-gradient">London Businesses</span>
+              Web Design Services for London <span className="border-2 border-navy-900 rounded-lg px-3 py-1 inline-block">Businesses</span>
             </h1>
             <p className="text-body mb-8">
               From simple brochure sites to full e-commerce stores, we offer everything London small businesses need to succeed online.
@@ -308,7 +258,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`card relative ${pkg.popular ? 'ring-2 ring-primary-500 shadow-2xl' : ''}`}
+                className={`card relative ${pkg.popular ? 'ring-2 ring-primary-500' : ''}`}
               >
                 {pkg.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-600 text-white text-sm font-semibold rounded-full">

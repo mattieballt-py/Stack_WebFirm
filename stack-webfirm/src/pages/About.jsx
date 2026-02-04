@@ -106,7 +106,7 @@ const About = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="heading-xl mb-6">
-                We're <span className="text-gradient">Stack Websites London</span>
+                We're Stack Websites <span className="border-2 border-navy-900 rounded-lg px-3 py-1 inline-block">London</span>
               </h1>
               <p className="text-body mb-6">
                 A team of designers, developers, and digital marketers on a mission to help London small businesses thrive online.
@@ -129,7 +129,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format"
                 alt="Stack Websites London team"
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl"
               />
             </motion.div>
           </div>
@@ -348,7 +348,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format"
                 alt="Working together"
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl"
               />
             </motion.div>
           </div>

@@ -6,7 +6,7 @@ const ClientGrid = ({ clients }) => {
   const isInView = useInView(ref, { once: false, amount: 0.2 });
 
   // Split text animation for heading
-  const heading = "Trusted by Leaders";
+  const heading = "Trusted by Experts";
   const words = heading.split(" ");
 
   const containerVariants = {
@@ -66,33 +66,34 @@ const ClientGrid = ({ clients }) => {
   return (
     <section ref={ref} className="section-padding bg-gradient-to-b from-slate-50 to-white">
       <div className="container-custom">
-        {/* Animated Heading */}
-        <motion.div
-          className="text-center mb-16"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <h2 className="heading-lg text-navy-900 inline-flex flex-wrap justify-center gap-x-3">
-            {words.map((word, i) => (
-              <motion.span
-                key={i}
-                custom={i}
-                variants={wordVariants}
-                className="inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </h2>
-        </motion.div>
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+          {/* Animated Heading - Left Side */}
+          <motion.div
+            className="lg:w-1/4 flex-shrink-0"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            <h2 className="heading-lg text-navy-900 flex flex-wrap gap-x-3">
+              {words.map((word, i) => (
+                <motion.span
+                  key={i}
+                  custom={i}
+                  variants={wordVariants}
+                  className={`inline-block ${word === 'Experts' ? 'border-2 border-navy-900 rounded-lg px-3 py-1' : ''}`}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </h2>
+          </motion.div>
 
-        {/* Logo Grid */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
+          {/* Logo Grid - Right Side */}
+          <motion.div
+            className="flex-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
           {clients.map((client, index) => (
             <motion.div
               key={client.name}
@@ -100,7 +101,7 @@ const ClientGrid = ({ clients }) => {
               className="group relative"
             >
               {/* Main Card */}
-              <div className="relative overflow-hidden rounded-xl bg-white p-8 md:p-10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+              <div className="relative overflow-hidden rounded-xl bg-white p-8 md:p-10 transition-all duration-500 hover:-translate-y-1">
                 {/* Border */}
                 <div className="absolute inset-0 border border-slate-200 rounded-xl pointer-events-none" />
 
@@ -156,7 +157,8 @@ const ClientGrid = ({ clients }) => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Bottom Trust Line */}
         <motion.p
@@ -165,7 +167,7 @@ const ClientGrid = ({ clients }) => {
           transition={{ delay: 1, duration: 0.6 }}
           className="text-center mt-12 text-slate-600 text-sm"
         >
-          Join 50+ London businesses who trust us with their online presence
+          Join 50+ businesses who trust us with their online presence
         </motion.p>
       </div>
     </section>
