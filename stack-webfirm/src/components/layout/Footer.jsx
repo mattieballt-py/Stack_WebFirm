@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import StackLogo from '../../assets/StackLogo.svg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -31,9 +32,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
+              <img src={StackLogo} alt="Stack Websites Logo" className="w-10 h-10" />
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-white leading-tight">Stack Websites</span>
                 <span className="text-xs text-primary-400 leading-tight">London</span>
