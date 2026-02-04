@@ -50,19 +50,19 @@ const Home = () => {
     {
       title: 'Café Mocha',
       category: 'Coffee Shop',
-      image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&q=75&fm=webp',
       description: 'Modern café website with online ordering',
     },
     {
       title: 'Smith Plumbing',
       category: 'Trades',
-      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&q=75&fm=webp',
       description: 'Professional service site with booking',
     },
     {
       title: 'Bella Boutique',
       category: 'Retail',
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&q=75&fm=webp',
       description: 'E-commerce store with 200+ products',
     },
   ];
@@ -93,9 +93,9 @@ const Home = () => {
 
   const stats = [
     { value: '50+', label: 'London Businesses' },
-    { value: '7 Days', label: 'Launch Time' },
+    { value: '14 Days', label: 'Launch Time' },
     { value: '£1,999', label: 'Fixed Price' },
-    { value: '2 Hours', label: 'Reply Time' },
+    { value: '4 Hours', label: 'Reply Time' },
   ];
 
   const clients = [
@@ -173,8 +173,11 @@ const Home = () => {
             >
               <div className="relative z-10">
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&q=75&fm=webp"
                   alt="Modern web design"
+                  width="800"
+                  height="534"
+                  loading="eager"
                   className="rounded-2xl"
                 />
               </div>
@@ -289,6 +292,9 @@ const Home = () => {
                   <img
                     src={item.image}
                     alt={item.title}
+                    width="800"
+                    height="533"
+                    loading="lazy"
                     className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

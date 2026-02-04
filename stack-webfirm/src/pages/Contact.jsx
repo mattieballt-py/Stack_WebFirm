@@ -283,7 +283,7 @@ const Contact = () => {
 
                   {/* Trust Signals */}
                   <p className="text-xs text-slate-500 text-center">
-                    ✅ London businesses only | Fixed price | Reply within 2hrs
+                    London businesses only | Fixed price | Reply within 4hrs
                   </p>
 
                   {/* Email Alternative */}

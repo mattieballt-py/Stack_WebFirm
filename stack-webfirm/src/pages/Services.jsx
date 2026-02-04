@@ -198,15 +198,15 @@ const Services = () => {
 
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center py-2 border-t border-gray-200">
-                    <span className="text-sm text-gray-500">Pricing</span>
+                    <span className="text-sm text-gray-700">Pricing</span>
                     <span className="text-sm font-semibold text-gray-900">{service.pricing}</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-t border-gray-200">
-                    <span className="text-sm text-gray-500">Timeline</span>
+                    <span className="text-sm text-gray-700">Timeline</span>
                     <span className="text-sm font-semibold text-gray-900">{service.timeline}</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-t border-b border-gray-200">
-                    <span className="text-sm text-gray-500">Ideal for</span>
+                    <span className="text-sm text-gray-700">Ideal for</span>
                     <span className="text-sm font-semibold text-gray-900 text-right">{service.ideal}</span>
                   </div>
                 </div>

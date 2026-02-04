@@ -81,8 +81,12 @@ const Loader = ({ onLoadingComplete }) => {
                 delay: 2,
                 ease: "easeInOut",
               }}
-              className="absolute inset-0 rounded-full bg-white blur-2xl"
-              style={{ zIndex: -1 }}
+              className="absolute inset-0 rounded-full bg-white"
+              style={{
+                zIndex: -1,
+                boxShadow: '0 0 80px 40px rgba(255, 255, 255, 0.4)',
+                filter: 'none'
+              }}
             />
           </div>
         </motion.div>

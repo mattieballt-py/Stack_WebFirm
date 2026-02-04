@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'inline',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
         name: 'Stack Websites London',
@@ -64,6 +65,8 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true, // Remove console logs in production
+        drop_debugger: true, // Remove debugger statements
+        pure_funcs: ['console.log', 'console.info', 'console.debug'], // Remove specific console methods
       },
     },
     // Code splitting for better performance
@@ -75,10 +78,13 @@ export default defineConfig({
           'vendor-animation': ['framer-motion'],
           'vendor-icons': ['@heroicons/react'],
         },
+        compact: true, // Enable compact output
       },
     },
     // Increase chunk size warning limit
     chunkSizeWarningLimit: 1000,
+    // Enable CSS code splitting
+    cssCodeSplit: true,
   },
   // Optimize dependencies
   optimizeDeps: {

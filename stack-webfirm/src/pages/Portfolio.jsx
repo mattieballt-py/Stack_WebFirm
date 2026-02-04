@@ -20,7 +20,7 @@ const Portfolio = () => {
       title: 'Café Mocha',
       category: 'dog training',
       location: 'Shoreditch',
-      image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&q=75&fm=webp',
       description: 'Modern coffee shop website with online ordering system and menu showcase.',
       features: ['Online Ordering', 'Menu Management', 'Mobile Responsive', 'SEO Optimized'],
       link: '#',
@@ -34,7 +34,7 @@ const Portfolio = () => {
       title: 'Smith Plumbing Services',
       category: 'sports',
       location: 'Camden',
-      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&q=75&fm=webp',
       description: 'Professional service website with booking system and emergency contact.',
       features: ['Online Booking', 'Service Areas Map', 'Emergency Hotline', 'Customer Reviews'],
       link: '#',
@@ -48,7 +48,7 @@ const Portfolio = () => {
       title: 'Bella Boutique',
       category: 'retail',
       location: 'Notting Hill',
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&q=75&fm=webp',
       description: 'E-commerce fashion store with 200+ products and secure checkout.',
       features: ['E-commerce Platform', 'Inventory Management', 'Payment Integration', 'Customer Accounts'],
       link: '#',
@@ -62,7 +62,7 @@ const Portfolio = () => {
       title: 'Verde Yoga Studio',
       category: 'professional',
       location: 'Greenwich',
-      image: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&auto=format&q=75&fm=webp',
       description: 'Wellness studio site with class schedules and membership signup.',
       features: ['Class Booking', 'Membership Portal', 'Event Calendar', 'Blog'],
       link: '#',
@@ -76,7 +76,7 @@ const Portfolio = () => {
       title: 'The Gourmet Kitchen',
       category: 'restaurant',
       location: 'Chelsea',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&q=75&fm=webp',
       description: 'Fine dining restaurant with table reservations and event booking.',
       features: ['Table Reservations', 'Menu Showcase', 'Private Events', 'Gallery'],
       link: '#',
@@ -90,7 +90,7 @@ const Portfolio = () => {
       title: 'TechFix London',
       category: 'trades',
       location: 'Islington',
-      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&q=75&fm=webp',
       description: 'IT support company with service packages and instant quote calculator.',
       features: ['Quote Calculator', 'Service Packages', 'Support Tickets', 'Knowledge Base'],
       link: '#',
@@ -104,7 +104,7 @@ const Portfolio = () => {
       title: 'Urban Threads',
       category: 'retail',
       location: 'Covent Garden',
-      image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&auto=format&q=75&fm=webp',
       description: 'Streetwear brand with custom product filters and wishlist feature.',
       features: ['Product Filters', 'Wishlist', 'Size Guide', 'Brand Story'],
       link: '#',
@@ -118,7 +118,7 @@ const Portfolio = () => {
       title: 'Harper & Associates',
       category: 'professional',
       location: 'City of London',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&q=75&fm=webp',
       description: 'Law firm website with case studies and consultation booking.',
       features: ['Case Studies', 'Team Profiles', 'Consultation Booking', 'Resource Library'],
       link: '#',
@@ -198,6 +198,9 @@ const Portfolio = () => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    width="800"
+                    height="533"
+                    loading="lazy"
                     className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-semibold text-gray-900">
@@ -227,11 +230,11 @@ const Portfolio = () => {
                   {/* Results */}
                   <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
                     <div>
-                      <div className="text-sm text-gray-500 mb-1">Result 1</div>
+                      <div className="text-sm text-gray-700 mb-1">Result 1</div>
                       <div className="font-semibold text-gray-900">{project.results.metric1}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500 mb-1">Result 2</div>
+                      <div className="text-sm text-gray-700 mb-1">Result 2</div>
                       <div className="font-semibold text-gray-900">{project.results.metric2}</div>
                     </div>
                   </div>
