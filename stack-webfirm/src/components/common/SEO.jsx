@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SEO = ({
   title = 'Modern Web Design London | Stack Websites London - Fast, Quality Sites',
-  description = 'High-quality, modern websites for London small businesses. Get online fast with AI-powered design that converts. Trusted London web design studio.',
+  description = 'High-quality, modern websites for London small businesses. Get online fast with design that converts. Trusted London web design studio.',
   keywords = 'web design London, website design London, small business websites, London web designer, modern website design, fast websites, AI-powered websites',
   canonical = 'https://websitelondon.co.uk',
   ogImage = 'https://websitelondon.co.uk/og-image.jpg',
