@@ -23,7 +23,7 @@ const Loader = ({ onLoadingComplete }) => {
           initial={{ y: 0 }}
           exit={{ y: '-100%' }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-[#0F284A] flex items-center justify-center"
         >
           {/* Logo Container */}
           <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48">

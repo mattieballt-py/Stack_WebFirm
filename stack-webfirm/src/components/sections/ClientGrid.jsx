@@ -101,7 +101,7 @@ const ClientGrid = ({ clients }) => {
               className="group relative"
             >
               {/* Main Card */}
-              <div className="relative overflow-hidden rounded-xl bg-white p-8 md:p-10 transition-all duration-500 hover:-translate-y-1">
+              <div className="relative overflow-hidden rounded-xl bg-[#0F284A] p-8 md:p-10 transition-all duration-500 hover:-translate-y-1">
                 {/* Border */}
                 <div className="absolute inset-0 border border-slate-200 rounded-xl pointer-events-none" />
 
