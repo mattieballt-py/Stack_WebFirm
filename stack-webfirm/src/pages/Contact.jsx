@@ -13,14 +13,12 @@ import {
 } from '@heroicons/react/24/outline';
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
+  businessName: z.string().min(2, 'Business name is required'),
+  name: z.string().min(2, 'Your name is required'),
   email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Please enter a valid phone number').optional().or(z.literal('')),
-  businessName: z.string().min(2, 'Business name must be at least 2 characters'),
-  serviceType: z.string().min(1, 'Please select a service'),
-  budget: z.string().min(1, 'Please select a budget range'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-  timeline: z.string().min(1, 'Please select a timeline'),
+  phone: z.string().optional().or(z.literal('')),
+  frustration: z.string().min(1, 'Please select an option'),
+  currentSite: z.string().optional().or(z.literal('')),
 });
 
 const Contact = () => {
@@ -115,10 +113,10 @@ const Contact = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h1 className="heading-xl mb-6">
-              Let's Build Your <span className="text-gradient">Website</span>
+              Get Your £1,999 Website
             </h1>
             <p className="text-body mb-8">
-              Get a free quote within 24 hours. No pressure, no obligation - just honest advice for your London business.
+              Fixed price. No surprises. Reply in 2 hours. For London small businesses only.
             </p>
           </motion.div>
         </div>
@@ -149,173 +147,136 @@ const Contact = () => {
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  {/* Name & Email Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                        Your Name *
-                      </label>
-                      <input
-                        {...register('name')}
-                        type="text"
-                        id="name"
-                        className={`input-field ${errors.name ? 'input-error' : ''}`}
-                        placeholder="John Smith"
-                      />
-                      {errors.name && (
-                        <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-                      )}
-                    </div>
+                <form onSubmit={handleSubmit(onSubmit)} className="max-w-md space-y-4 p-6 bg-white rounded-xl shadow-lg">
+                  {/* Business Name */}
+                  <div>
+                    <label htmlFor="businessName" className="block text-sm font-medium text-slate-700 mb-1">
+                      Your Business Name
+                    </label>
+                    <input
+                      {...register('businessName')}
+                      type="text"
+                      id="businessName"
+                      placeholder="Joe's Coffee (Shoreditch)"
+                      className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 ${errors.businessName ? 'border-red-500' : ''}`}
+                      required
+                    />
+                    {errors.businessName && (
+                      <p className="mt-1 text-sm text-red-600">{errors.businessName.message}</p>
+                    )}
+                  </div>
 
+                  {/* Your Name */}
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
+                      Your Name
+                    </label>
+                    <input
+                      {...register('name')}
+                      type="text"
+                      id="name"
+                      placeholder="Joe Smith"
+                      className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 ${errors.name ? 'border-red-500' : ''}`}
+                      required
+                    />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                    )}
+                  </div>
+
+                  {/* Email & Phone Row */}
+                  <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
+                      <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
+                        Email
                       </label>
                       <input
                         {...register('email')}
                         type="email"
                         id="email"
-                        className={`input-field ${errors.email ? 'input-error' : ''}`}
-                        placeholder="john@example.com"
+                        placeholder="joe@joescoffee.co.uk"
+                        className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 ${errors.email ? 'border-red-500' : ''}`}
+                        required
                       />
                       {errors.email && (
                         <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
                       )}
                     </div>
-                  </div>
-
-                  {/* Phone & Business Name Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
+                      <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">
+                        Phone
                       </label>
                       <input
                         {...register('phone')}
                         type="tel"
                         id="phone"
-                        className={`input-field ${errors.phone ? 'input-error' : ''}`}
-                        placeholder="+44 20 1234 5678"
+                        placeholder="020 7946 0123"
+                        className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
                       />
-                      {errors.phone && (
-                        <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label htmlFor="businessName" className="block text-sm font-medium text-gray-700 mb-2">
-                        Business Name *
-                      </label>
-                      <input
-                        {...register('businessName')}
-                        type="text"
-                        id="businessName"
-                        className={`input-field ${errors.businessName ? 'input-error' : ''}`}
-                        placeholder="Your Business Ltd"
-                      />
-                      {errors.businessName && (
-                        <p className="mt-1 text-sm text-red-600">{errors.businessName.message}</p>
-                      )}
                     </div>
                   </div>
 
-                  {/* Service Type & Budget Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700 mb-2">
-                        Service Needed *
-                      </label>
-                      <select
-                        {...register('serviceType')}
-                        id="serviceType"
-                        className={`input-field ${errors.serviceType ? 'input-error' : ''}`}
-                      >
-                        <option value="">Select a service</option>
-                        <option value="web-design">Custom Web Design</option>
-                        <option value="ecommerce">E-commerce Website</option>
-                        <option value="seo">SEO Optimization</option>
-                        <option value="maintenance">Website Maintenance</option>
-                        <option value="branding">Branding & Logo</option>
-                        <option value="custom">Custom Development</option>
-                      </select>
-                      {errors.serviceType && (
-                        <p className="mt-1 text-sm text-red-600">{errors.serviceType.message}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
-                        Budget Range *
-                      </label>
-                      <select
-                        {...register('budget')}
-                        id="budget"
-                        className={`input-field ${errors.budget ? 'input-error' : ''}`}
-                      >
-                        <option value="">Select budget</option>
-                        <option value="1000-2000">£1,000 - £2,000</option>
-                        <option value="2000-3500">£2,000 - £3,500</option>
-                        <option value="3500-5000">£3,500 - £5,000</option>
-                        <option value="5000+">£5,000+</option>
-                      </select>
-                      {errors.budget && (
-                        <p className="mt-1 text-sm text-red-600">{errors.budget.message}</p>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Timeline */}
+                  {/* Frustration Dropdown */}
                   <div>
-                    <label htmlFor="timeline" className="block text-sm font-medium text-gray-700 mb-2">
-                      When do you need it? *
+                    <label htmlFor="frustration" className="block text-sm font-medium text-slate-700 mb-1">
+                      What's your biggest website frustration right now?
                     </label>
                     <select
-                      {...register('timeline')}
-                      id="timeline"
-                      className={`input-field ${errors.timeline ? 'input-error' : ''}`}
+                      {...register('frustration')}
+                      id="frustration"
+                      className={`w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 ${errors.frustration ? 'border-red-500' : ''}`}
+                      required
                     >
-                      <option value="">Select timeline</option>
-                      <option value="urgent">ASAP (1-2 weeks)</option>
-                      <option value="soon">Soon (2-4 weeks)</option>
-                      <option value="flexible">Flexible (1-2 months)</option>
-                      <option value="planning">Just planning</option>
+                      <option value="">Select one...</option>
+                      <option value="no-google">"No one finds us on Google"</option>
+                      <option value="mobile">"Site looks dated on mobile"</option>
+                      <option value="bookings">"No online bookings/enquiries"</option>
+                      <option value="broken">"Took weeks to build, still broken"</option>
+                      <option value="ai">"Want AI chat/booking but don't know how"</option>
+                      <option value="other">Other (we'll call you)</option>
                     </select>
-                    {errors.timeline && (
-                      <p className="mt-1 text-sm text-red-600">{errors.timeline.message}</p>
+                    {errors.frustration && (
+                      <p className="mt-1 text-sm text-red-600">{errors.frustration.message}</p>
                     )}
                   </div>
 
-                  {/* Message */}
+                  {/* Current Site */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Tell us about your project *
+                    <label htmlFor="currentSite" className="block text-sm font-medium text-slate-700 mb-1">
+                      Current site (or "none yet")
                     </label>
-                    <textarea
-                      {...register('message')}
-                      id="message"
-                      rows={5}
-                      className={`input-field ${errors.message ? 'input-error' : ''}`}
-                      placeholder="Tell us about your business and what you're looking for..."
+                    <input
+                      {...register('currentSite')}
+                      type="text"
+                      id="currentSite"
+                      placeholder="www.joescoffee.co.uk or type 'none'"
+                      className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
                     />
-                    {errors.message && (
-                      <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
-                    )}
                   </div>
 
                   {/* Submit Button */}
-                  <Button
+                  <button
                     type="submit"
-                    variant="primary"
-                    size="lg"
-                    className="w-full"
                     disabled={isSubmitting}
+                    className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? 'Sending...' : 'Get Your Free Quote'}
-                  </Button>
+                    {isSubmitting ? 'Sending...' : 'Get My Custom Quote (2 mins)'}
+                  </button>
 
-                  <p className="text-sm text-gray-500 text-center">
-                    We'll respond within 24 hours. No spam, we promise.
+                  {/* Trust Signals */}
+                  <p className="text-xs text-slate-500 text-center">
+                    ✅ London businesses only | Fixed price | Reply within 2hrs
+                  </p>
+
+                  {/* Email Alternative */}
+                  <p className="text-sm text-slate-600 text-center pt-2 border-t border-slate-200">
+                    or email{' '}
+                    <a
+                      href="mailto:hello@websitelondon.co.uk"
+                      className="text-amber-600 hover:text-amber-700 font-medium"
+                    >
+                      hello@websitelondon.co.uk
+                    </a>
                   </p>
                 </form>
               </motion.div>

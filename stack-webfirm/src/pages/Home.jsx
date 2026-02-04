@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SEO from '../components/common/SEO';
 import Button from '../components/common/Button';
+import ClientGrid from '../components/sections/ClientGrid';
 import {
   RocketLaunchIcon,
   SparklesIcon,
@@ -91,10 +92,21 @@ const Home = () => {
   ];
 
   const stats = [
-    { value: '100+', label: 'Websites Launched' },
-    { value: '2 Weeks', label: 'Average Delivery' },
-    { value: '4.9/5', label: 'Client Rating' },
-    { value: '100%', label: 'London Based' },
+    { value: '50+', label: 'London Businesses' },
+    { value: '7 Days', label: 'Launch Time' },
+    { value: '£1,999', label: 'Fixed Price' },
+    { value: '2 Hours', label: 'Reply Time' },
+  ];
+
+  const clients = [
+    { name: 'Slack', svg: 'slack.svg' },
+    { name: 'Salesforce', svg: 'salesforce.svg' },
+    { name: 'Webflow', svg: 'webflow.svg' },
+    { name: 'PwC', svg: 'pwc.svg' },
+    { name: 'Shopify', svg: 'shopify.svg' },
+    { name: 'Airbnb', svg: 'airbnb.svg' },
+    { name: 'Stripe', svg: 'stripe.svg' },
+    { name: 'Notion', svg: 'notion.svg' },
   ];
 
   return (
@@ -110,41 +122,52 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-block mb-4 px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold">
-                🚀 London's Fastest Web Design Studio
-              </div>
-              <h1 className="heading-xl mb-6 text-gray-900">
-                Modern Websites for{' '}
-                <span className="text-gradient">London Small Businesses</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                Modern Website for London Businesses
               </h1>
-              <p className="text-body mb-8 max-w-xl">
-                Get online in 2 weeks with a beautiful, fast website that actually brings in customers.
-                No templates. No waiting. Just quality web design that works.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button to="/contact" size="lg">
-                  Get Your Free Quote
-                </Button>
-                <Button to="/portfolio" variant="outline" size="lg">
-                  View Our Work
+
+              {/* Benefits Checklist */}
+              <div className="space-y-3 mb-8">
+                <div className="flex items-center space-x-3">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500 flex-shrink-0" />
+                  <span className="text-lg text-slate-700">Mobile-first design</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500 flex-shrink-0" />
+                  <span className="text-lg text-slate-700">SEO for local Google rankings</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500 flex-shrink-0" />
+                  <span className="text-lg text-slate-700">Fast hosting included</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500 flex-shrink-0" />
+                  <span className="text-lg text-slate-700">Launch in 7 days</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircleIcon className="h-6 w-6 text-green-500 flex-shrink-0" />
+                  <span className="text-lg text-slate-700">London support</span>
+                </div>
+              </div>
+
+              {/* Price */}
+              <div className="mb-8 p-6 bg-amber-50 border-2 border-amber-200 rounded-xl inline-block">
+                <p className="text-3xl md:text-4xl font-bold text-slate-900">
+                  Only £1,999 <span className="text-lg font-normal text-slate-600">- Fixed Price</span>
+                </p>
+              </div>
+
+              {/* CTA Button */}
+              <div className="mb-6">
+                <Button to="/contact" size="lg" className="text-lg">
+                  Get My Website →
                 </Button>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="mt-12 flex flex-wrap items-center gap-8">
-                <div className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                  <span className="text-sm text-gray-600">Money-back guarantee</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                  <span className="text-sm text-gray-600">Free revisions</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                  <span className="text-sm text-gray-600">24/7 support</span>
-                </div>
-              </div>
+              {/* Trust Signal */}
+              <p className="text-sm text-slate-600">
+                ✅ 50+ London businesses | Fixed price, no surprises | Reply within 2hrs
+              </p>
             </motion.div>
 
             <motion.div
@@ -188,6 +211,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Client Logo Grid */}
+      <ClientGrid clients={clients} />
 
       {/* Services Section */}
       <section className="section-padding bg-gray-50">
